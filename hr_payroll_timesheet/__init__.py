@@ -1,2 +1,3 @@
 # -*- coding: utf-8 -*-
-import hr_payslip, hr_contract
+from . import hr_payslip
+from . import hr_contract

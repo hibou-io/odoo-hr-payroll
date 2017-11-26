@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
+<odoo>
     <data>
 
 <!-- HR SALARY RULES-->
@@ -601,4 +601,4 @@ result = categories.FUTA_WAGES
     </record>
 
     </data>
-</openerp>
+</odoo>

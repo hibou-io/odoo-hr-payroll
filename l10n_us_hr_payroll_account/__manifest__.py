@@ -5,10 +5,10 @@
     'license': 'AGPL-3',
     'category': 'Localization',
     'depends': ['l10n_us_hr_payroll', 'hr_payroll_account'],
-    'version': '2017.0.0',
+    'version': '11.0.2017.0.0',
     'description': """
 USA Payroll Accounting hooks.
-==================
+=============================
 
     * Links Rules to Accounts based on US Accounting Localization
     """,

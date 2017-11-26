@@ -3,7 +3,7 @@
 {
     'name': 'Payroll Payments',
     'author': 'Hibou Corp. <hello@hibou.io>',
-    'version': '1.0',
+    'version': '11.0.0.0.0',
     'category': 'Human Resources',
     'sequence': 95,
     'summary': 'Register payments for Payroll Payslips',

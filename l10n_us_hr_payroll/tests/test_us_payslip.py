@@ -3,9 +3,9 @@
 from logging import getLogger
 from sys import float_info as sys_float_info
 
-from openerp.tests import common
-from openerp.tools.float_utils import float_round as odoo_float_round
-from openerp.addons.l10n_us_hr_payroll.l10n_us_hr_payroll import USHrContract
+from odoo.tests import common
+from odoo.tools.float_utils import float_round as odoo_float_round
+from odoo.addons.l10n_us_hr_payroll.l10n_us_hr_payroll import USHrContract
 
 
 def process_payslip(payslip):
@@ -67,7 +67,7 @@ class TestUsPayslip(common.TransactionCase):
             'type_id': self.ref('hr_contract.hr_contract_type_emp'),
             'employee_id': employee.id,
             'struct_id': struct_id,
-            'working_hours': self.ref('resource.timesheet_group1'),
+            'resource_calendar_id': self.ref('resource.resource_calendar_std'),
             'schedule_pay': schedule_pay,
             'w4_allowances': w4_allowances,
             'w4_filing_status': w4_filing_status,
@@ -75,6 +75,7 @@ class TestUsPayslip(common.TransactionCase):
             'w4_additional_withholding': w4_additional_withholding,
             'external_wages': external_wages,
             'futa_type': futa_type,
+            'state': 'open',  # if not "Running" then no automatic selection when Payslip is created
         })
 
     def _createPayslip(self, employee, date_from, date_to):

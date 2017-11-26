@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
+<odoo>
     <data>
         <record id="payslip_line_filter_date" model="ir.ui.view">
             <field name="name">hr.payslip.line.select</field>
@@ -15,4 +15,4 @@
             </field>
         </record>
     </data>
-</openerp>
+</odoo>

@@ -5,10 +5,10 @@
     'license': 'AGPL-3',
     'category': 'Localization',
     'depends': ['l10n_us_hr_payroll'],
-    'version': '2017.0.0',
+    'version': '11.0.2017.0.0',
     'description': """
 USA::Florida Payroll Rules.
-==================
+===========================
 
     * Florida Department of Revenue partner
     * Contribution register for Florida DoR

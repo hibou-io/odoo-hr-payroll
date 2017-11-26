@@ -2,7 +2,6 @@
 
 from odoo import api, fields, models, _
 from odoo.exceptions import ValidationError
-from werkzeug import url_encode
 
 
 class HrPayslip(models.Model):
@@ -110,10 +109,6 @@ class HrPayrollRegisterPaymentWizard(models.TransientModel):
             'communication': self.communication
         })
         payment.post()
-
-        # Log the payment in the chatter
-        #body = (_("A payment of %s %s with the reference <a href='/mail/view?%s'>%s</a> related to your payslip %s has been made.") % (payment.amount, payment.currency_id.symbol, url_encode({'model': 'account.payment', 'res_id': payment.id}), payment.name, payroll_sheet.name))
-        #payroll_sheet.message_post(body=body)
 
         # Reconcile the payment and the payroll, i.e. lookup on the payable account move lines
         account_move_lines_to_reconcile = self.env['account.move.line']

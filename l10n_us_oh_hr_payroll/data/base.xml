@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
+<odoo>
     <data>
 <!-- CONTRIBUTION REGISTERS -->
     <record id="res_partner_ohdor_unemp" model="res.partner">
@@ -43,4 +43,4 @@
     </record>
 
     </data>
-</openerp>
+</odoo>

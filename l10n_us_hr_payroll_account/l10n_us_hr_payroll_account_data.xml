@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
+<odoo>
     <data>
         <!-- Basic -->
         <record id="hr_payroll.hr_rule_basic" model="hr.salary.rule">
@@ -84,4 +84,4 @@
         </record>
 
     </data>
-</openerp>
+</odoo>

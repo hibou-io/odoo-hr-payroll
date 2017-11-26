@@ -5,7 +5,7 @@
     'license': 'AGPL-3',
     'category': 'Human Resources',
     'depends': ['hr_payroll_account'],
-    'version': '0.9.0',
+    'version': '11.0.0.0.0',
     'description': """
 Date on Payslip Lines
 =====================

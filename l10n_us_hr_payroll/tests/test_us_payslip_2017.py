@@ -1,6 +1,6 @@
 from .test_us_payslip import TestUsPayslip, process_payslip
 
-from openerp.addons.l10n_us_hr_payroll.l10n_us_hr_payroll import USHrContract
+from odoo.addons.l10n_us_hr_payroll.l10n_us_hr_payroll import USHrContract
 
 from sys import float_info
 
