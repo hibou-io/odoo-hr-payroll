@@ -4,20 +4,16 @@ from openerp import models, fields, api
 class USFLHrContract(models.Model):
     _inherit = 'hr.contract'
 
-    fl_unemp_rate_2016 = fields.Float(string="Florida Unemployment Rate 2016", compute="fetch_fl_unemp_rate_2016")
-    fl_unemp_rate_2017 = fields.Float(string="Florida Unemployment Rate 2017", compute="fetch_fl_unemp_rate_2017")
-
     @api.multi
-    def fetch_fl_unemp_rate_2016(self):
-        for contract in self:
-            contract.fl_unemp_rate_2016 = 0.0 if (contract.futa_type == self.FUTA_TYPE_BASIC) \
-                else contract.employee_id.company_id.fl_unemp_rate_2016
+    def fl_unemp_rate(self, year):
+        self.ensure_one()
+        if self.futa_type == self.FUTA_TYPE_BASIC:
+            return 0.0
 
-    @api.multi
-    def fetch_fl_unemp_rate_2017(self):
-        for contract in self:
-            contract.fl_unemp_rate_2017 = 0.0 if (contract.futa_type == self.FUTA_TYPE_BASIC) \
-                else contract.employee_id.company_id.fl_unemp_rate_2017
+        if hasattr(self.employee_id.company_id, 'fl_unemp_rate_' + str(year)):
+            return self.employee_id.company_id['fl_unemp_rate_' + str(year)]
+
+        raise NotImplemented('Year (' + str(year) + ') Not implemented for US Florida.')
 
 
 class FLCompany(models.Model):
@@ -26,3 +22,4 @@ class FLCompany(models.Model):
     # Defaults from :: http://floridarevenue.com/dor/taxes/reemployment.html
     fl_unemp_rate_2016 = fields.Float(string="Florida Unemployment Rate 2016", default=2.7)
     fl_unemp_rate_2017 = fields.Float(string="Florida Unemployment Rate 2017", default=2.7)
+    fl_unemp_rate_2018 = fields.Float(string="Florida Unemployment Rate 2018", default=2.7)

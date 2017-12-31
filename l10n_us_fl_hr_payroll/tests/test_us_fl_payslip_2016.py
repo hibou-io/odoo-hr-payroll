@@ -22,7 +22,7 @@ class TestUsFlPayslip(TestUsPayslip):
         contract = self._createContract(employee, salary, struct_id=self.ref('l10n_us_fl_hr_payroll.hr_payroll_salary_structure_us_fl_employee'))
 
         ## tax rates
-        FL_UNEMP = contract.fl_unemp_rate_2016 / -100.0
+        FL_UNEMP = contract.fl_unemp_rate(2016) / -100.0
 
         self._log('2016 Florida tax first payslip:')
         payslip = self._createPayslip(employee, '2016-01-01', '2016-01-31')
@@ -63,7 +63,7 @@ class TestUsFlPayslip(TestUsPayslip):
         FL_UNEMP_MAX_WAGE = 7000.0
 
         ## tax rates
-        FL_UNEMP = contract.fl_unemp_rate_2016 / -100.0
+        FL_UNEMP = contract.fl_unemp_rate(2016) / -100.0
 
         self._log('2016 Forida_external tax first payslip:')
         payslip = self._createPayslip(employee, '2016-01-01', '2016-01-31')
@@ -89,7 +89,7 @@ class TestUsFlPayslip(TestUsPayslip):
         FL_UNEMP_MAX_WAGE = 7000.0
 
         ## tax rates
-        FL_UNEMP = contract.fl_unemp_rate_2016 / -100.0
+        FL_UNEMP = contract.fl_unemp_rate(2016) / -100.0
 
         self.assertPayrollEqual(FL_UNEMP, 0.0)
 

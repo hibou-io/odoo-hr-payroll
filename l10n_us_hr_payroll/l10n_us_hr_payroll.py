@@ -5,6 +5,11 @@ class USHrContract(models.Model):
     FUTA_TYPE_EXEMPT = 'exempt'
     FUTA_TYPE_BASIC = 'basic'
     FUTA_TYPE_NORMAL = 'normal'
+    FUTA_YEARS_VALID = (
+        2016,
+        2017,
+        2018,
+    )
 
     _inherit = 'hr.contract'
 
@@ -26,25 +31,16 @@ class USHrContract(models.Model):
         (FUTA_TYPE_BASIC, 'Basic Rate (6%)'),
     ], string="Federal Unemployment Tax Type (FUTA)", default='normal')
 
-    futa_rate_2016 = fields.Float(string="Federal Unemployment Rate 2016", compute="compute_futa_rate_2016")
-    futa_rate_2017 = fields.Float(string="Federal Unemployment Rate 2017", compute="compute_futa_rate_2017")
-
     @api.multi
-    def compute_futa_rate_2016(self):
-        for contract in self:
-            if contract.futa_type == self.FUTA_TYPE_EXEMPT:
-                contract.futa_rate_2016 = 0.0
-            elif contract.futa_type == self.FUTA_TYPE_NORMAL:
-                contract.futa_rate_2016 = 0.6
-            else:
-                contract.futa_rate_2016 = 6.0
+    def futa_rate(self, year):
+        self.ensure_one()
 
-    @api.multi
-    def compute_futa_rate_2017(self):
-        for contract in self:
-            if contract.futa_type == self.FUTA_TYPE_EXEMPT:
-                contract.futa_rate_2017 = 0.0
-            elif contract.futa_type == self.FUTA_TYPE_NORMAL:
-                contract.futa_rate_2017 = 0.6
-            else:
-                contract.futa_rate_2017 = 6.0
+        if year not in self.FUTA_YEARS_VALID:
+            raise NotImplemented('FUTA rate for Year: ' + str(year) + ' not known.')
+
+        if self.futa_type == self.FUTA_TYPE_EXEMPT:
+            return 0.0
+        elif self.futa_type == self.FUTA_TYPE_NORMAL:
+            return 0.6
+        else:
+            return 6.0

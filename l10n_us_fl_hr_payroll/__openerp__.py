@@ -22,6 +22,7 @@ USA::Florida Payroll Rules.
         'data/base.xml',
         'data/rules_2016.xml',
         'data/rules_2017.xml',
+        'data/rules_2018.xml',
         'data/final.xml',
     ],
     'installable': True
