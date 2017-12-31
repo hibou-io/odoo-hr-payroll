@@ -8,9 +8,9 @@ class TestUsOhPayslip(TestUsPayslip):
     ###
     #    Taxes and Rates
     ###
-    OH_UNEMP_MAX_WAGE = 9000.0
+    OH_UNEMP_MAX_WAGE = 9500.0
 
-    def test_2017_taxes(self):
+    def test_2018_taxes(self):
         salary = 5000.0
 
         # For formula here
@@ -19,20 +19,20 @@ class TestUsOhPayslip(TestUsPayslip):
         wd = ((tw - 40000) * 0.035 + 900) / 12 * 1.112
 
         employee = self._createEmployee()
-        employee.company_id.oh_unemp_rate_2017 = 2.7
+        employee.company_id.oh_unemp_rate_2018 = 2.7
 
         contract = self._createContract(employee, salary, struct_id=self.ref('l10n_us_oh_hr_payroll.hr_payroll_salary_structure_us_oh_employee'))
 
         # tax rates
-        oh_unemp = contract.oh_unemp_rate(2017) / -100.0
+        oh_unemp = contract.oh_unemp_rate(2018) / -100.0
 
         self._log('2016 Ohio tax last payslip:')
         payslip = self._createPayslip(employee, '2016-12-01', '2016-12-31')
         payslip.compute_sheet()
         process_payslip(payslip)
 
-        self._log('2017 Ohio tax first payslip:')
-        payslip = self._createPayslip(employee, '2017-01-01', '2017-01-31')
+        self._log('2018 Ohio tax first payslip:')
+        payslip = self._createPayslip(employee, '2018-01-01', '2018-01-31')
 
         payslip.compute_sheet()
 
@@ -49,8 +49,8 @@ class TestUsOhPayslip(TestUsPayslip):
         remaining_oh_unemp_wages = self.OH_UNEMP_MAX_WAGE - salary if (self.OH_UNEMP_MAX_WAGE - 2*salary < salary) \
             else salary
 
-        self._log('2017 Ohio tax second payslip:')
-        payslip = self._createPayslip(employee, '2017-02-01', '2017-02-28')
+        self._log('2018 Ohio tax second payslip:')
+        payslip = self._createPayslip(employee, '2018-02-01', '2018-02-28')
 
         payslip.compute_sheet()
 
@@ -59,21 +59,21 @@ class TestUsOhPayslip(TestUsPayslip):
         self.assertPayrollEqual(cats['OH_UNEMP_WAGES'], remaining_oh_unemp_wages)
         self.assertPayrollEqual(cats['OH_UNEMP'], remaining_oh_unemp_wages * oh_unemp)
 
-    def test_2017_taxes_with_external(self):
+    def test_2018_taxes_with_external(self):
         salary = 5000.0
         external_wages = 6000.0
 
         employee = self._createEmployee()
-        employee.company_id.oh_unemp_rate_2017 = 2.8
+        employee.company_id.oh_unemp_rate_2018 = 2.8
 
         contract = self._createContract(employee, salary, external_wages=external_wages,
                                         struct_id=self.ref('l10n_us_oh_hr_payroll.hr_payroll_salary_structure_us_oh_employee'))
 
         # tax rates
-        oh_unemp = contract.oh_unemp_rate(2017) / -100.0
+        oh_unemp = contract.oh_unemp_rate(2018) / -100.0
 
-        self._log('2017 Ohio_external tax first payslip:')
-        payslip = self._createPayslip(employee, '2017-01-01', '2017-01-31')
+        self._log('2018 Ohio_external tax first payslip:')
+        payslip = self._createPayslip(employee, '2018-01-01', '2018-01-31')
 
         payslip.compute_sheet()
 
@@ -82,23 +82,23 @@ class TestUsOhPayslip(TestUsPayslip):
         self.assertPayrollEqual(cats['OH_UNEMP_WAGES'], self.OH_UNEMP_MAX_WAGE - external_wages)
         self.assertPayrollEqual(cats['OH_UNEMP'], cats['OH_UNEMP_WAGES'] * oh_unemp)
 
-    def test_2017_taxes_with_state_exempt(self):
+    def test_2018_taxes_with_state_exempt(self):
         salary = 5000.0
         external_wages = 6000.0
 
         employee = self._createEmployee()
-        employee.company_id.oh_unemp_rate_2017 = 2.9
+        employee.company_id.oh_unemp_rate_2018 = 2.9
 
         contract = self._createContract(employee, salary, external_wages=external_wages, struct_id=self.ref(
             'l10n_us_oh_hr_payroll.hr_payroll_salary_structure_us_oh_employee'), futa_type=USHrContract.FUTA_TYPE_BASIC)
 
         # tax rates
-        oh_unemp = contract.oh_unemp_rate(2017) / -100.0
+        oh_unemp = contract.oh_unemp_rate(2018) / -100.0
 
         self.assertPayrollEqual(oh_unemp, 0.0)
 
-        self._log('2017 Ohio exempt tax first payslip:')
-        payslip = self._createPayslip(employee, '2017-01-01', '2017-01-31')
+        self._log('2018 Ohio exempt tax first payslip:')
+        payslip = self._createPayslip(employee, '2018-01-01', '2018-01-31')
 
         payslip.compute_sheet()
 

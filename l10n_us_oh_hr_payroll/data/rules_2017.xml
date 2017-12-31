@@ -34,7 +34,7 @@ else:
         <field name="condition_python">result = (payslip.date_to[:4] == '2017')</field>
         <field name="amount_select">code</field>
         <field name="amount_python_compute">
-result_rate = -contract.oh_unemp_rate_2017
+result_rate = -contract.oh_unemp_rate(2017)
 result = categories.OH_UNEMP_WAGES
 
 # result_rate of 0 implies 100% due to bug

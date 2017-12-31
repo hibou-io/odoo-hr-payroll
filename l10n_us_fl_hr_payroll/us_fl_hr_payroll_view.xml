@@ -11,6 +11,7 @@
                  <xpath expr="//field[@name='currency_id']" position="after">
                     <field name="fl_unemp_rate_2016"/>
                     <field name="fl_unemp_rate_2017"/>
+                    <field name="fl_unemp_rate_2018"/>
                  </xpath>
             </data>
             </field>

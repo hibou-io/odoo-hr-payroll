@@ -31,6 +31,17 @@
           ref('hr_payroll_rules_futa_2017'),
           ref('hr_payroll_rules_fed_inc_withhold_2017_single'),
           ref('hr_payroll_rules_fed_inc_withhold_2017_married'),
+
+          ref('hr_payroll_rules_fica_emp_ss_wages_2018'),
+          ref('hr_payroll_rules_fica_emp_m_wages_2018'),
+          ref('hr_payroll_rules_fica_emp_m_add_wages_2018'),
+          ref('hr_payroll_rules_fica_emp_ss_2018'),
+          ref('hr_payroll_rules_fica_emp_m_2018'),
+          ref('hr_payroll_rules_fica_emp_m_add_2018'),
+          ref('hr_payroll_rules_futa_wages_2018'),
+          ref('hr_payroll_rules_futa_2018'),
+          ref('hr_payroll_rules_fed_inc_withhold_2018_single'),
+          ref('hr_payroll_rules_fed_inc_withhold_2018_married'),
           ])]" name="rule_ids"/>
         <field name="company_id" ref="base.main_company"/>    
         <field name="parent_id" ref="hr_payroll.structure_base"/>

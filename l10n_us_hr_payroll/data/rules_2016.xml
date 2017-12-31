@@ -593,7 +593,7 @@ else:
         <field name="condition_python">result = (payslip.date_to[:4] == '2016' and contract.futa_type != contract.FUTA_TYPE_EXEMPT)</field>
         <field name="amount_select">code</field>
         <field name="amount_python_compute">
-result_rate = -(contract.futa_rate_2016)
+result_rate = -(contract.futa_rate(2016))
 result = categories.FUTA_WAGES
         </field>
         <field name="register_id" ref="contrib_register_eftps_940"/>

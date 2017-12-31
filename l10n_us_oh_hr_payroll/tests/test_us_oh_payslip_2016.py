@@ -27,7 +27,7 @@ class TestUsOhPayslip(TestUsPayslip):
         contract = self._createContract(employee, salary, struct_id=self.ref('l10n_us_oh_hr_payroll.hr_payroll_salary_structure_us_oh_employee'))
 
         ## tax rates
-        OH_UNEMP = contract.oh_unemp_rate_2016 / -100.0
+        OH_UNEMP = contract.oh_unemp_rate(2016) / -100.0
 
         self._log('2016 Ohio tax first payslip:')
         payslip = self._createPayslip(employee, '2016-01-01', '2016-01-31')
@@ -70,7 +70,7 @@ class TestUsOhPayslip(TestUsPayslip):
         OH_UNEMP_MAX_WAGE = 9000.0
 
         ## tax rates
-        OH_UNEMP = contract.oh_unemp_rate_2016 / -100.0
+        OH_UNEMP = contract.oh_unemp_rate(2016) / -100.0
 
         self._log('2016 Ohio_external tax first payslip:')
         payslip = self._createPayslip(employee, '2016-01-01', '2016-01-31')
@@ -96,7 +96,7 @@ class TestUsOhPayslip(TestUsPayslip):
         OH_UNEMP_MAX_WAGE = 9000.0
 
         ## tax rates
-        OH_UNEMP = contract.oh_unemp_rate_2016 / -100.0
+        OH_UNEMP = contract.oh_unemp_rate(2016) / -100.0
 
         self.assertPayrollEqual(OH_UNEMP, 0.0)
 

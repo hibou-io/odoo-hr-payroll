@@ -4,19 +4,19 @@
 
 <!-- HR SALARY RULES-->
     <!-- Employee Deductions and Calculations -->
-    <record id="hr_payroll_rules_fica_emp_ss_wages_2017" model="hr.salary.rule">
+    <record id="hr_payroll_rules_fica_emp_ss_wages_2018" model="hr.salary.rule">
         <field name="sequence" eval="120"/>
         <field name="category_id" ref="hr_payroll_fica_emp_ss_wages"/>
-        <field name="name">FICA Employee Social Security Wages (2017)</field>
-        <field name="code">FICA_EMP_SS_WAGES_2017</field>
+        <field name="name">FICA Employee Social Security Wages (2018)</field>
+        <field name="code">FICA_EMP_SS_WAGES_2018</field>
         <field name="condition_select">python</field>
-        <field name="condition_python">result = (payslip.date_to[:4] == '2017')</field>
+        <field name="condition_python">result = (payslip.date_to[:4] == '2018')</field>
         <field name="amount_select">code</field>
         <field name="amount_python_compute">
 ###
-ytd = payslip.sum('FICA_EMP_SS_WAGES_2017', '2017-01-01', '2018-01-01')
+ytd = payslip.sum('FICA_EMP_SS_WAGES_2018', '2018-01-01', '2019-01-01')
 ytd += contract.external_wages
-remaining = 127200.0 - ytd
+remaining = 128400.0 - ytd
 if remaining &lt;= 0.0:
     result = 0
 elif remaining &lt; categories.GROSS:
@@ -26,29 +26,29 @@ else:
         </field>
         <field name="appears_on_payslip" eval="False"/>
     </record>
-    <record id="hr_payroll_rules_fica_emp_m_wages_2017" model="hr.salary.rule">
+    <record id="hr_payroll_rules_fica_emp_m_wages_2018" model="hr.salary.rule">
         <field name="sequence" eval="121"/>
         <field name="category_id" ref="hr_payroll_fica_emp_m_wages"/>
-        <field name="name">FICA Employee Medicare Wages (2017)</field>
-        <field name="code">FICA_EMP_M_WAGES_2017</field>
+        <field name="name">FICA Employee Medicare Wages (2018)</field>
+        <field name="code">FICA_EMP_M_WAGES_2018</field>
         <field name="condition_select">python</field>
-        <field name="condition_python">result = (payslip.date_to[:4] == '2017')</field>
+        <field name="condition_python">result = (payslip.date_to[:4] == '2018')</field>
         <field name="amount_select">code</field>
         <field name="amount_python_compute">result = categories.GROSS</field>
         <field name="appears_on_payslip" eval="False"/>
     </record>
-    <record id="hr_payroll_rules_fica_emp_m_add_wages_2017" model="hr.salary.rule">
+    <record id="hr_payroll_rules_fica_emp_m_add_wages_2018" model="hr.salary.rule">
         <field name="sequence" eval="122"/>
         <field name="category_id" ref="hr_payroll_fica_emp_m_add_wages"/>
-        <field name="name">FICA Employee Medicare Additional Wages (2017)</field>
-        <field name="code">FICA_EMP_M_ADD_WAGES_2017</field>
+        <field name="name">FICA Employee Medicare Additional Wages (2018)</field>
+        <field name="code">FICA_EMP_M_ADD_WAGES_2018</field>
         <field name="condition_select">python</field>
-        <field name="condition_python">result = (payslip.date_to[:4] == '2017')</field>
+        <field name="condition_python">result = (payslip.date_to[:4] == '2018')</field>
         <field name="amount_select">code</field>
         <field name="amount_python_compute">
 ###
 ADD_M = 200000.0
-norm_med_ytd = payslip.sum('FICA_EMP_M_WAGES_2017', '2017-01-01', '2018-01-01')
+norm_med_ytd = payslip.sum('FICA_EMP_M_WAGES_2018', '2018-01-01', '2019-01-01')
 norm_med_cur = categories.FICA_EMP_M_WAGES
 if ADD_M &gt; norm_med_ytd:
     diff = ADD_M - norm_med_ytd
@@ -62,46 +62,46 @@ else:
         <field name="appears_on_payslip" eval="False"/>
     </record>
 
-    <record id="hr_payroll_rules_fica_emp_ss_2017" model="hr.salary.rule">
+    <record id="hr_payroll_rules_fica_emp_ss_2018" model="hr.salary.rule">
         <field name="sequence" eval="140"/>
         <field name="category_id" ref="hr_payroll_fica_emp_ss"/>
-        <field name="name">FICA Employee Social Security (2017)</field>
-        <field name="code">FICA_EMP_SS_2017</field>
+        <field name="name">FICA Employee Social Security (2018)</field>
+        <field name="code">FICA_EMP_SS_2018</field>
         <field name="condition_select">python</field>
-        <field name="condition_python">result = (payslip.date_to[:4] == '2017')</field>
+        <field name="condition_python">result = (payslip.date_to[:4] == '2018')</field>
         <field name="amount_select">code</field>
         <field name="amount_python_compute">
-###  this should be "rules.FICA_EMP_SS_WAGES_2017", but it doesn't work
+###  this should be "rules.FICA_EMP_SS_WAGES_2018", but it doesn't work
 result_rate = -6.2
 result = categories.FICA_EMP_SS_WAGES
         </field>
         <field name="register_id" ref="contrib_register_eftps_941"/>
     </record>
-    <record id="hr_payroll_rules_fica_emp_m_2017" model="hr.salary.rule">
+    <record id="hr_payroll_rules_fica_emp_m_2018" model="hr.salary.rule">
         <field name="sequence" eval="141"/>
         <field name="category_id" ref="hr_payroll_fica_emp_m"/>
-        <field name="name">FICA Employee Medicare (2017)</field>
-        <field name="code">FICA_EMP_M_2017</field>
+        <field name="name">FICA Employee Medicare (2018)</field>
+        <field name="code">FICA_EMP_M_2018</field>
         <field name="condition_select">python</field>
-        <field name="condition_python">result = (payslip.date_to[:4] == '2017')</field>
+        <field name="condition_python">result = (payslip.date_to[:4] == '2018')</field>
         <field name="amount_select">code</field>
         <field name="amount_python_compute">
-###  this should be "rules.FICA_EMP_M_WAGES_2017", but it doesn't work
+###  this should be "rules.FICA_EMP_M_WAGES_2018", but it doesn't work
 result_rate = -1.45
 result = categories.FICA_EMP_M_WAGES
         </field>
         <field name="register_id" ref="contrib_register_eftps_941"/>
     </record>
-    <record id="hr_payroll_rules_fica_emp_m_add_2017" model="hr.salary.rule">
+    <record id="hr_payroll_rules_fica_emp_m_add_2018" model="hr.salary.rule">
         <field name="sequence" eval="142"/>
         <field name="category_id" ref="hr_payroll_fica_emp_m_add"/>
-        <field name="name">FICA Employee Medicare Additional (2017)</field>
-        <field name="code">FICA_EMP_M_ADD_2017</field>
+        <field name="name">FICA Employee Medicare Additional (2018)</field>
+        <field name="code">FICA_EMP_M_ADD_2018</field>
         <field name="condition_select">python</field>
-        <field name="condition_python">result = (payslip.date_to[:4] == '2017')</field>
+        <field name="condition_python">result = (payslip.date_to[:4] == '2018')</field>
         <field name="amount_select">code</field>
         <field name="amount_python_compute">
-###  this should be "rules.FICA_EMP_M_ADD_WAGES_2017", but it doesn't work
+###  this should be "rules.FICA_EMP_M_ADD_WAGES_2018", but it doesn't work
 result_rate = -0.9
 result = categories.FICA_EMP_M_ADD_WAGES
         </field>
@@ -109,13 +109,13 @@ result = categories.FICA_EMP_M_ADD_WAGES
     </record>
 
     <!-- Federal Income Tax Withholding -->
-    <record id="hr_payroll_rules_fed_inc_withhold_2017_single" model="hr.salary.rule">
+    <record id="hr_payroll_rules_fed_inc_withhold_2018_single" model="hr.salary.rule">
         <field name="sequence" eval="145"/>
         <field name="category_id" ref="hr_payroll_fed_income_withhold"/>
-        <field name="name">Federal Income Withholding - Single (2017)</field>
-        <field name="code">FED_INC_WITHHOLD_2017_S</field>
+        <field name="name">Federal Income Withholding - Single (2018)</field>
+        <field name="code">FED_INC_WITHHOLD_2018_S</field>
         <field name="condition_select">python</field>
-        <field name="condition_python">result = (payslip.date_to[:4] == '2017' and contract.w4_filing_status != 'married' and contract.w4_filing_status)</field>
+        <field name="condition_python">result = (payslip.date_to[:4] == '2018' and contract.w4_filing_status != 'married' and contract.w4_filing_status)</field>
         <field name="amount_select">code</field>
         <field name="amount_python_compute">
 wages = categories.GROSS
@@ -335,13 +335,13 @@ result = -(val + additional)
         </field>
         <field name="register_id" ref="contrib_register_eftps_941"/>
     </record>
-    <record id="hr_payroll_rules_fed_inc_withhold_2017_married" model="hr.salary.rule">
+    <record id="hr_payroll_rules_fed_inc_withhold_2018_married" model="hr.salary.rule">
         <field name="sequence" eval="145"/>
         <field name="category_id" ref="hr_payroll_fed_income_withhold"/>
-        <field name="name">Federal Income Withholding - Married (2017)</field>
-        <field name="code">FED_INC_WITHHOLD_2017_M</field>
+        <field name="name">Federal Income Withholding - Married (2018)</field>
+        <field name="code">FED_INC_WITHHOLD_2018_M</field>
         <field name="condition_select">python</field>
-        <field name="condition_python">result = (payslip.date_to[:4] == '2017' and contract.w4_filing_status == 'married')</field>
+        <field name="condition_python">result = (payslip.date_to[:4] == '2018' and contract.w4_filing_status == 'married')</field>
         <field name="amount_select">code</field>
         <field name="amount_python_compute">
 wages = categories.GROSS
@@ -562,17 +562,17 @@ result = -(val + additional)
         <field name="register_id" ref="contrib_register_eftps_941"/>
     </record>
 
-    <record id="hr_payroll_rules_futa_wages_2017" model="hr.salary.rule">
+    <record id="hr_payroll_rules_futa_wages_2018" model="hr.salary.rule">
         <field name="sequence" eval="422"/>
         <field name="category_id" ref="hr_payroll_futa_wages"/>
-        <field name="name">FUTA Federal Unemployment - Wages (2017)</field>
-        <field name="code">FUTA_WAGES_2017</field>
+        <field name="name">FUTA Federal Unemployment - Wages (2018)</field>
+        <field name="code">FUTA_WAGES_2018</field>
         <field name="condition_select">python</field>
-        <field name="condition_python">result = (payslip.date_to[:4] == '2017' and contract.futa_type != contract.FUTA_TYPE_EXEMPT)</field>
+        <field name="condition_python">result = (payslip.date_to[:4] == '2018' and contract.futa_type != contract.FUTA_TYPE_EXEMPT)</field>
         <field name="amount_select">code</field>
         <field name="amount_python_compute">
 ###
-ytd = payslip.sum('FUTA_WAGES_2017', '2017-01-01', '2018-01-01')
+ytd = payslip.sum('FUTA_WAGES_2018', '2018-01-01', '2019-01-01')
 ytd += contract.external_wages
 remaining = 7000.0 - ytd
 if remaining &lt;= 0.0:
@@ -584,16 +584,16 @@ else:
         </field>
         <field name="appears_on_payslip" eval="False"/>
     </record>
-    <record id="hr_payroll_rules_futa_2017" model="hr.salary.rule">
+    <record id="hr_payroll_rules_futa_2018" model="hr.salary.rule">
         <field name="sequence" eval="442"/>
         <field name="category_id" ref="hr_payroll_futa"/>
-        <field name="name">FUTA Federal Unemployment (2017)</field>
-        <field name="code">FUTA_2017</field>
+        <field name="name">FUTA Federal Unemployment (2018)</field>
+        <field name="code">FUTA_2018</field>
         <field name="condition_select">python</field>
-        <field name="condition_python">result = (payslip.date_to[:4] == '2017' and contract.futa_type != contract.FUTA_TYPE_EXEMPT)</field>
+        <field name="condition_python">result = (payslip.date_to[:4] == '2018' and contract.futa_type != contract.FUTA_TYPE_EXEMPT)</field>
         <field name="amount_select">code</field>
         <field name="amount_python_compute">
-result_rate = -(contract.futa_rate(2017))
+result_rate = -(contract.futa_rate(2018))
 result = categories.FUTA_WAGES
         </field>
         <field name="register_id" ref="contrib_register_eftps_940"/>
