@@ -7,10 +7,10 @@ class HrPayslip(models.Model):
     _inherit = 'hr.payslip'
 
     @api.model
-    def get_worked_day_lines(self, contract_ids, date_from, date_to):
+    def get_worked_day_lines(self, contracts, date_from, date_to):
         leaves = {}
 
-        for contract in self.env['hr.contract'].browse(contract_ids):
+        for contract in contracts:
             for leave in self._fetch_valid_leaves(contract.employee_id.id, date_from, date_to):
                 leave_code = self._create_leave_code(leave.holiday_status_id.name)
                 if leave_code in leaves:
@@ -26,7 +26,9 @@ class HrPayslip(models.Model):
                         'contract_id': contract.id,
                     }
 
-        return super(HrPayslip, self).get_worked_day_lines(contract_ids, date_from, date_to) + leaves.values()
+        res = super(HrPayslip, self).get_worked_day_lines(contracts, date_from, date_to)
+        res.extend(leaves.values())
+        return res
 
     @api.multi
     def action_payslip_done(self):

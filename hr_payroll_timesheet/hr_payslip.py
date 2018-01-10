@@ -6,7 +6,7 @@ class HrPayslip(models.Model):
     _inherit = 'hr.payslip'
 
     @api.model
-    def get_worked_day_lines(self, contract_ids, date_from, date_to):
+    def get_worked_day_lines(self, contracts, date_from, date_to):
         def create_empty_worked_lines(employee_id, contract_id, date_from, date_to):
             attendance = {
                 'name': 'Timesheet Attendance',
@@ -27,7 +27,7 @@ class HrPayslip(models.Model):
 
         attendances = []
 
-        for contract in self.env['hr.contract'].browse(contract_ids):
+        for contract in contracts:
             attendance, valid_days = create_empty_worked_lines(
                 contract.employee_id.id,
                 contract.id,
@@ -44,5 +44,7 @@ class HrPayslip(models.Model):
             attendance['number_of_hours'] = round(attendance['number_of_hours'], 2)
             attendances.append(attendance)
 
-        return super(HrPayslip, self).get_worked_day_lines(contract_ids, date_from, date_to) + attendances
+        res = super(HrPayslip, self).get_worked_day_lines(contracts, date_from, date_to)
+        res.extend(attendances)
+        return res
 
