@@ -585,7 +585,7 @@ else:
         <field name="appears_on_payslip" eval="False"/>
     </record>
     <record id="hr_payroll_rules_futa_2018" model="hr.salary.rule">
-        <field name="sequence" eval="712"/>
+        <field name="sequence" eval="442"/>
         <field name="category_id" ref="hr_payroll_futa"/>
         <field name="name">FUTA Federal Unemployment (2018)</field>
         <field name="code">FUTA_2018</field>
