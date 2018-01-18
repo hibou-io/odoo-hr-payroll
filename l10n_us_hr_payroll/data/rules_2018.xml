@@ -129,204 +129,204 @@ additional = contract.w4_additional_withholding
 # Single WEEKLY
 ###
 if 'weekly' == schedule_pay:
-    wages -= allowances * 77.90
+    wages -= allowances * 79.80
     if is_nra:
-        wages += 44.20
+        wages += 151.00
 
-    if wages &gt; 44 and wages &lt;= 224:
-        val = 0.00 + ((wages - 44) * 0.10)
+    if wages &gt; 71 and wages &lt;= 254:
+        val = 0.00 + ((wages - 71) * 0.10)
 
-    elif wages &gt; 224 and wages &lt;= 774:
-        val = 18.00 + ((wages - 224) * 0.15)
+    elif wages &gt; 254 and wages &lt;= 815:
+        val = 18.30 + ((wages - 254) * 0.12)
 
-    elif wages &gt; 774 and wages &lt;= 1812:
-        val = 100.50 + ((wages - 774) * 0.25)
+    elif wages &gt; 815 and wages &lt;= 1658:
+        val = 85.62 + ((wages - 815) * 0.22)
 
-    elif wages &gt; 1812 and wages &lt;= 3730:
-        val = 360.00 + ((wages - 1812) * 0.28)
+    elif wages &gt; 1658 and wages &lt;= 3100:
+        val = 271.08 + ((wages - 1658) * 0.24)
 
-    elif wages &gt; 3730 and wages &lt;= 8058:
-        val = 897.04 + ((wages - 3730) * 0.33)
+    elif wages &gt; 3100 and wages &lt;= 3917:
+        val = 617.16 + ((wages - 3100) * 0.32)
 
-    elif wages &gt; 8058 and wages &lt;= 8090:
-        val = 2325.28 + ((wages - 8058) * 0.35)
+    elif wages &gt; 3917 and wages &lt;= 9687:
+        val = 878.60 + ((wages - 3917) * 0.35)
 
-    elif wages &gt; 8090:
-        val = 2336.48 + ((wages - 8090) * 0.396)
+    elif wages &gt; 9687:
+        val = 2898.10 + ((wages - 9687) * 0.37)
 
 ###
 # Single BIWEEKLY
 ###
 elif 'bi-weekly' == schedule_pay:
-    wages -= allowances * 155.80
+    wages -= allowances * 159.60
     if is_nra:
-        wages += 88.50
+        wages += 301.90
 
-    if wages &gt; 88 and wages &lt;= 447:
-        val = 0.00 + ((wages - 88) * 0.10)
+    if wages &gt; 142 and wages &lt;= 509:
+        val = 0.00 + ((wages - 142) * 0.10)
 
-    elif wages &gt; 447 and wages &lt;= 1548:
-        val = 35.90 + ((wages - 447) * 0.15)
+    elif wages &gt; 509 and wages &lt;= 1631:
+        val = 36.70 + ((wages - 509) * 0.12)
 
-    elif wages &gt; 1548 and wages &lt;= 3623:
-        val = 201.05 + ((wages - 1548) * 0.25)
+    elif wages &gt; 1631 and wages &lt;= 3315:
+        val = 171.34 + ((wages - 1631) * 0.22)
 
-    elif wages &gt; 3623 and wages &lt;= 7460:
-        val = 719.80 + ((wages - 3623) * 0.28)
+    elif wages &gt; 3315 and wages &lt;= 6200:
+        val = 541.82 + ((wages - 3315) * 0.24)
 
-    elif wages &gt; 7460 and wages &lt;= 16115:
-        val = 1794.16 + ((wages - 7460) * 0.33)
+    elif wages &gt; 6200 and wages &lt;= 7835:
+        val = 1234.22 + ((wages - 6200) * 0.32)
 
-    elif wages &gt; 16115 and wages &lt;= 16181:
-        val = 4650.31 + ((wages - 16115) * 0.35)
+    elif wages &gt; 7835 and wages &lt;= 19373:
+        val = 1757.42 + ((wages - 7835) * 0.35)
 
-    elif wages &gt; 16181:
-        val = 4673.41 + ((wages - 16181) * 0.396)
+    elif wages &gt; 19373:
+        val = 5795.72 + ((wages - 19373) * 0.37)
 
 ###
 # Single SEMIMONTHLY
 ###
 elif 'semi-monthly' == schedule_pay:  # impossible
-    wages -= allowances * 168.80
+    wages -= allowances * 172.90
     if is_nra:
-        wages += 95.80
+        wages += 327.10
 
-    if wages &gt; 96 and wages &lt;= 484:
-        val = 0.00 + ((wages - 96) * 0.10)
+    if wages &gt; 154 and wages &lt;= 551:
+        val = 0.00 + ((wages - 154) * 0.10)
 
-    elif wages &gt; 484 and wages &lt;= 1677:
-        val = 38.80 + ((wages - 484) * 0.15)
+    elif wages &gt; 551 and wages &lt;= 1767:
+        val = 39.70 + ((wages - 551) * 0.12)
 
-    elif wages &gt; 1677 and wages &lt;= 3925:
-        val = 217.75 + ((wages - 1677) * 0.25)
+    elif wages &gt; 1767 and wages &lt;= 3592:
+        val = 185.62 + ((wages - 1767) * 0.22)
 
-    elif wages &gt; 3925 and wages &lt;= 8081:
-        val = 779.75 + ((wages - 3925) * 0.28)
+    elif wages &gt; 3592 and wages &lt;= 6717:
+        val = 587.12 + ((wages - 3592) * 0.24)
 
-    elif wages &gt; 8081 and wages &lt;= 17458:
-        val = 1943.43 + ((wages - 8081) * 0.33)
+    elif wages &gt; 6717 and wages &lt;= 8488:
+        val = 1337.12 + ((wages - 6717) * 0.32)
 
-    elif wages &gt; 17458 and wages &lt;= 17529:
-        val = 5037.84 + ((wages - 17458) * 0.35)
+    elif wages &gt; 8488 and wages &lt;= 20988:
+        val = 1903.84 + ((wages - 8488) * 0.35)
 
-    elif wages &gt; 17529:
-        val = 5062.69 + ((wages - 17529) * 0.396)
+    elif wages &gt; 20988:
+        val = 6278.84 + ((wages - 20988) * 0.37)
 
 ###
 # Single MONTHLY
 ###
 elif 'monthly' == schedule_pay:
-    wages -= allowances * 337.50
+    wages -= allowances * 345.80
     if is_nra:
-        wages += 191.70
+        wages += 654.20
 
-    if wages &gt; 192 and wages &lt;= 969:
-        val = 0.00 + ((wages - 192) * 0.10)
+    if wages &gt; 308 and wages &lt;= 1102:
+        val = 0.00 + ((wages - 308) * 0.10)
 
-    elif wages &gt; 969 and wages &lt;= 3354:
-        val = 77.70 + ((wages - 969) * 0.15)
+    elif wages &gt; 1102 and wages &lt;= 3533:
+        val = 79.40 + ((wages - 1102) * 0.12)
 
-    elif wages &gt; 3354 and wages &lt;= 7850:
-        val = 435.45 + ((wages - 3354) * 0.25)
+    elif wages &gt; 3533 and wages &lt;= 7183:
+        val = 371.12 + ((wages - 3533) * 0.22)
 
-    elif wages &gt; 7850 and wages &lt;= 16163:
-        val = 1559.45 + ((wages - 7850) * 0.28)
+    elif wages &gt; 7183 and wages &lt;= 13433:
+        val = 1174.12 + ((wages - 7183) * 0.24)
 
-    elif wages &gt; 16163 and wages &lt;= 34917:
-        val = 3887.09 + ((wages - 16163) * 0.33)
+    elif wages &gt; 13433 and wages &lt;= 16975:
+        val = 2674.12 + ((wages - 13433) * 0.32)
 
-    elif wages &gt; 34917 and wages &lt;= 35058:
-        val = 10075.91 + ((wages - 34917) * 0.35)
+    elif wages &gt; 16975 and wages &lt;= 41975:
+        val = 3807.56 + ((wages - 16975) * 0.35)
 
-    elif wages &gt; 35058:
-        val = 10125.26 + ((wages - 35058) * 0.396)
+    elif wages &gt; 41975:
+        val = 12557.56 + ((wages - 41975) * 0.37)
 
 ###
 # Single QUARTERLY
 ###
 elif 'quarterly' == schedule_pay:
-    wages -= allowances * 1012.50
+    wages -= allowances * 1037.50
     if is_nra:
-        wages += 575.00
+        wages += 1962.50
 
-    if wages &gt; 575 and wages &lt;= 2906:
-        val = 0.00 + ((wages - 575) * 0.10)
+    if wages &gt; 925 and wages &lt;= 3306:
+        val = 0.00 + ((wages - 925) * 0.10)
 
-    elif wages &gt; 2906 and wages &lt;= 10063:
-        val = 233.10 + ((wages - 2906) * 0.15)
+    elif wages &gt; 3306 and wages &lt;= 10600:
+        val = 238.10 + ((wages - 3306) * 0.12)
 
-    elif wages &gt; 10063 and wages &lt;= 23550:
-        val = 1306.65 + ((wages - 10063) * 0.25)
+    elif wages &gt; 10600 and wages &lt;= 21550:
+        val = 1113.38 + ((wages - 10600) * 0.22)
 
-    elif wages &gt; 23550 and wages &lt;= 48488:
-        val = 4678.40 + ((wages - 23550) * 0.28)
+    elif wages &gt; 21550 and wages &lt;= 40300:
+        val = 3522.38 + ((wages - 21550) * 0.24)
 
-    elif wages &gt; 48488 and wages &lt;= 104750:
-        val = 11661.04 + ((wages - 48488) * 0.33)
+    elif wages &gt; 40300 and wages &lt;= 50925:
+        val = 8022.38 + ((wages - 40300) * 0.32)
 
-    elif wages &gt; 104750 and wages &lt;= 105175:
-        val = 30227.50 + ((wages - 104750) * 0.35)
+    elif wages &gt; 50925 and wages &lt;= 125925:
+        val = 11422.38 + ((wages - 50925) * 0.35)
 
-    elif wages &gt; 105175:
-        val = 30376.25 + ((wages - 105175) * 0.396)
+    elif wages &gt; 125925:
+        val = 37672.38 + ((wages - 125925) * 0.37)
 
 ###
 # Single SEMIANNUAL
 ###
 elif 'semi-annually' == schedule_pay:
-    wages -= allowances * 2025.00
+    wages -= allowances * 2075.00
     if is_nra:
-        wages += 1150.0
+        wages += 3925.00
 
-    if wages &gt; 1150 and wages &lt;= 5813:
-        val = 0.00 + ((wages - 1150) * 0.10)
+    if wages &gt; 1850 and wages &lt;= 6613:
+        val = 0.00 + ((wages - 1850) * 0.10)
 
-    elif wages &gt; 5813 and wages &lt;= 20125:
-        val = 466.30 + ((wages - 5813) * 0.15)
+    elif wages &gt; 6613 and wages &lt;= 21200:
+        val = 476.30 + ((wages - 6613) * 0.12)
 
-    elif wages &gt; 20125 and wages &lt;= 47100:
-        val = 2613.10 + ((wages - 20125) * 0.25)
+    elif wages &gt; 21200 and wages &lt;= 43100:
+        val = 2226.74 + ((wages - 21200) * 0.22)
 
-    elif wages &gt; 47100 and wages &lt;= 96975:
-        val = 9356.85 + ((wages - 47100) * 0.28)
+    elif wages &gt; 43100 and wages &lt;= 80600:
+        val = 7044.74 + ((wages - 43100) * 0.24)
 
-    elif wages &gt; 96975 and wages &lt;= 209500:
-        val = 23321.85 + ((wages - 96975) * 0.33)
+    elif wages &gt; 80600 and wages &lt;= 101850:
+        val = 16044.74 + ((wages - 80600) * 0.32)
 
-    elif wages &gt; 209500 and wages &lt;= 210350:
-        val = 60455.10 + ((wages - 209500) * 0.35)
+    elif wages &gt; 101850 and wages &lt;= 251850:
+        val = 22844.74 + ((wages - 101850) * 0.35)
 
-    elif wages &gt; 210350:
-        val = 60752.60 + ((wages - 210350) * 0.396)
+    elif wages &gt; 251850:
+        val = 75344.74 + ((wages - 251850) * 0.37)
 
 ###
 # Single ANNUAL
 ###
 elif 'annually' == schedule_pay:
-    wages -= allowances * 4050.00
+    wages -= allowances * 4150.00
     if is_nra:
-        wages += 2300.0
+        wages += 7850.00
 
-    if wages &gt; 2300 and wages &lt;= 11625:
-        val = 0.00 + ((wages - 2300) * 0.10)
+    if wages &gt; 3700 and wages &lt;= 13225:
+        val = 0.00 + ((wages - 3700) * 0.10)
 
-    elif wages &gt; 11625 and wages &lt;= 40250:
-        val = 932.50 + ((wages - 11625) * 0.15)
+    elif wages &gt; 13225 and wages &lt;= 42400:
+        val = 952.50 + ((wages - 13225) * 0.12)
 
-    elif wages &gt; 40250 and wages &lt;= 94200:
-        val = 5226.25 + ((wages - 40250) * 0.25)
+    elif wages &gt; 42400 and wages &lt;= 86200:
+        val = 4453.50 + ((wages - 42400) * 0.22)
 
-    elif wages &gt; 94200 and wages &lt;= 193950:
-        val = 18713.75 + ((wages - 94200) * 0.28)
+    elif wages &gt; 86200 and wages &lt;= 161200:
+        val = 14089.50 + ((wages - 86200) * 0.24)
 
-    elif wages &gt; 193950 and wages &lt;= 419000:
-        val = 46643.75 + ((wages - 193950) * 0.33)
+    elif wages &gt; 161200 and wages &lt;= 203700:
+        val = 32089.50 + ((wages - 161200) * 0.32)
 
-    elif wages &gt; 419000 and wages &lt;= 420700:
-        val = 120910.25 + ((wages - 419000) * 0.35)
+    elif wages &gt; 203700 and wages &lt;= 503700:
+        val = 45689.50 + ((wages - 203700) * 0.35)
 
-    elif wages &gt; 420700:
-        val = 121505.25 + ((wages - 420700) * 0.396)
+    elif wages &gt; 503700:
+        val = 150689.50 + ((wages - 503700) * 0.37)
 
 else:
     raise Exception('Invalid schedule_pay="' + schedule_pay + '" for W4 Allowance calculation')
@@ -355,204 +355,204 @@ additional = contract.w4_additional_withholding
 # Married WEEKLY
 ###
 if 'weekly' == schedule_pay:
-    wages -= allowances * 77.90
+    wages -= allowances * 79.80
     if is_nra:
-        wages += 44.20
+        wages += 151.00
 
-    if wages &gt; 166 and wages &lt;= 525:
-        val = 0.00 + ((wages - 166) * 0.10)
+    if wages &gt; 222 and wages &lt;= 588:
+        val = 0.00 + ((wages - 222) * 0.10)
 
-    elif wages &gt; 525 and wages &lt;= 1626:
-        val = 35.90 + ((wages - 525) * 0.15)
+    elif wages &gt; 588 and wages &lt;= 1711:
+        val = 36.60 + ((wages - 588) * 0.12)
 
-    elif wages &gt; 1626 and wages &lt;= 3111:
-        val = 201.05 + ((wages - 1626) * 0.25)
+    elif wages &gt; 1711 and wages &lt;= 3395:
+        val = 171.36 + ((wages - 1711) * 0.22)
 
-    elif wages &gt; 3111 and wages &lt;= 4654:
-        val = 572.30 + ((wages - 3111) * 0.28)
+    elif wages &gt; 3395 and wages &lt;= 6280:
+        val = 541.84 + ((wages - 3395) * 0.24)
 
-    elif wages &gt; 4654 and wages &lt;= 8180:
-        val = 1004.34 + ((wages - 4654) * 0.33)
+    elif wages &gt; 6280 and wages &lt;= 7914:
+        val = 1234.24 + ((wages - 6280) * 0.32)
 
-    elif wages &gt; 8180 and wages &lt;= 9218:
-        val = 2167.92 + ((wages - 8180) * 0.35)
+    elif wages &gt; 7914 and wages &lt;= 11761:
+        val = 1757.12 + ((wages - 7914) * 0.35)
 
-    elif wages &gt; 9218:
-        val = 2531.22 + ((wages - 9218) * 0.396)
+    elif wages &gt; 11761:
+        val = 3103.57 + ((wages - 11761) * 0.37)
 
 ###
 # Married BIWEEKLY
 ###
 elif 'bi-weekly' == schedule_pay:
-    wages -= allowances * 155.80
+    wages -= allowances * 159.60
     if is_nra:
-        wages += 88.50
+        wages += 301.90
 
-    if wages &gt; 333 and wages &lt;= 1050:
-        val = 0.00 + ((wages - 333) * 0.10)
+    if wages &gt; 444 and wages &lt;= 1177:
+        val = 0.00 + ((wages - 444) * 0.10)
 
-    elif wages &gt; 1050 and wages &lt;= 3252:
-        val = 71.70 + ((wages - 1050) * 0.15)
+    elif wages &gt; 1177 and wages &lt;= 3421:
+        val = 73.30 + ((wages - 1177) * 0.12)
 
-    elif wages &gt; 3252 and wages &lt;= 6221:
-        val = 402.00 + ((wages - 3252) * 0.25)
+    elif wages &gt; 3421 and wages &lt;= 6790:
+        val = 342.58 + ((wages - 3421) * 0.22)
 
-    elif wages &gt; 6221 and wages &lt;= 9308:
-        val = 1144.25 + ((wages - 6221) * 0.28)
+    elif wages &gt; 6790 and wages &lt;= 12560:
+        val = 1083.76 + ((wages - 6790) * 0.24)
 
-    elif wages &gt; 9308 and wages &lt;= 16360:
-        val = 2008.61 + ((wages - 9308) * 0.33)
+    elif wages &gt; 12560 and wages &lt;= 15829:
+        val = 2468.56 + ((wages - 12560) * 0.32)
 
-    elif wages &gt; 16360 and wages &lt;= 18437:
-        val = 4335.77 + ((wages - 16360) * 0.35)
+    elif wages &gt; 15829 and wages &lt;= 23521:
+        val = 3514.64 + ((wages - 15829) * 0.35)
 
-    elif wages &gt; 18437:
-        val = 5062.72 + ((wages - 18437) * 0.396)
+    elif wages &gt; 23521:
+        val = 6206.84 + ((wages - 23521) * 0.37)
 
 ###
 # Married SEMIMONTHLY
 ###
 elif 'semi-monthly' == schedule_pay:  # impossible
-    wages -= allowances * 168.80
+    wages -= allowances * 172.90
     if is_nra:
-        wages += 95.80
+        wages += 327.10
 
-    if wages &gt; 360 and wages &lt;= 1138:
-        val = 0.00 + ((wages - 360) * 0.10)
+    if wages &gt; 481 and wages &lt;= 1275:
+        val = 0.00 + ((wages - 481) * 0.10)
 
-    elif wages &gt; 1138 and wages &lt;= 3523:
-        val = 77.80 + ((wages - 1138) * 0.15)
+    elif wages &gt; 1275 and wages &lt;= 3706:
+        val = 79.40 + ((wages - 1275) * 0.12)
 
-    elif wages &gt; 3523 and wages &lt;= 6740:
-        val = 435.55 + ((wages - 3523) * 0.25)
+    elif wages &gt; 3706 and wages &lt;= 7356:
+        val = 371.12 + ((wages - 3706) * 0.22)
 
-    elif wages &gt; 6740 and wages &lt;= 10083:
-        val = 1239.80 + ((wages - 6740) * 0.28)
+    elif wages &gt; 7356 and wages &lt;= 13606:
+        val = 1174.12 + ((wages - 7356) * 0.24)
 
-    elif wages &gt; 10083 and wages &lt;= 17723:
-        val = 2175.84 + ((wages - 10083) * 0.33)
+    elif wages &gt; 13606 and wages &lt;= 17148:
+        val = 2674.12 + ((wages - 13606) * 0.32)
 
-    elif wages &gt; 17723 and wages &lt;= 19973:
-        val = 4697.04 + ((wages - 17723) * 0.35)
+    elif wages &gt; 17148 and wages &lt;= 25481:
+        val = 3807.56 + ((wages - 17148) * 0.35)
 
-    elif wages &gt; 19973:
-        val = 5484.54 + ((wages - 19973) * 0.396)
+    elif wages &gt; 25481:
+        val = 6724.11 + ((wages - 25481) * 0.37)
 
 ###
 # Married MONTHLY
 ###
 elif 'monthly' == schedule_pay:
-    wages -= allowances * 337.50
+    wages -= allowances * 345.80
     if is_nra:
-        wages += 191.70
+        wages += 654.20
 
-    if wages &gt; 721 and wages &lt;= 2275:
-        val = 0.00 + ((wages - 721) * 0.10)
+    if wages &gt; 963 and wages &lt;= 2550:
+        val = 0.00 + ((wages - 963) * 0.10)
 
-    elif wages &gt; 2275 and wages &lt;= 7046:
-        val = 155.40 + ((wages - 2275) * 0.15)
+    elif wages &gt; 2550 and wages &lt;= 7413:
+        val = 158.70 + ((wages - 2550) * 0.12)
 
-    elif wages &gt; 7046 and wages &lt;= 13479:
-        val = 871.05 + ((wages - 7046) * 0.25)
+    elif wages &gt; 7413 and wages &lt;= 14713:
+        val = 742.26 + ((wages - 7413) * 0.22)
 
-    elif wages &gt; 13479 and wages &lt;= 20167:
-        val = 2479.30 + ((wages - 13479) * 0.28)
+    elif wages &gt; 14713 and wages &lt;= 27213:
+        val = 2348.26 + ((wages - 14713) * 0.24)
 
-    elif wages &gt; 20167 and wages &lt;= 35446:
-        val = 4351.94 + ((wages - 20167) * 0.33)
+    elif wages &gt; 27213 and wages &lt;= 34296:
+        val = 5348.26 + ((wages - 27213) * 0.32)
 
-    elif wages &gt; 35446 and wages &lt;= 39946:
-        val = 9394.01 + ((wages - 35446) * 0.35)
+    elif wages &gt; 34296 and wages &lt;= 50963:
+        val = 7614.82 + ((wages - 34296) * 0.35)
 
-    elif wages &gt; 39946:
-        val = 10969.01 + ((wages - 39946) * 0.396)
+    elif wages &gt; 50963:
+        val = 13448.27 + ((wages - 50963) * 0.37)
 
 ###
 # Married QUARTERLY
 ###
 elif 'quarterly' == schedule_pay:
-    wages -= allowances * 1012.50
+    wages -= allowances * 1037.50
     if is_nra:
-        wages += 575.00
+        wages += 1962.50
 
-    if wages &gt; 2163 and wages &lt;= 6825:
-        val = 0.00 + ((wages - 2163) * 0.10)
+    if wages &gt; 2888 and wages &lt;= 7650:
+        val = 0.00 + ((wages - 2888) * 0.10)
 
-    elif wages &gt; 6825 and wages &lt;= 21138:
-        val = 466.20 + ((wages - 6825) * 0.15)
+    elif wages &gt; 7650 and wages &lt;= 22238:
+        val = 476.20 + ((wages - 7650) * 0.12)
 
-    elif wages &gt; 21138 and wages &lt;= 40438:
-        val = 2613.15 + ((wages - 21138) * 0.25)
+    elif wages &gt; 22238 and wages &lt;= 44138:
+        val = 2226.76 + ((wages - 22238) * 0.22)
 
-    elif wages &gt; 40438 and wages &lt;= 60500:
-        val = 7438.15 + ((wages - 40438) * 0.28)
+    elif wages &gt; 44138 and wages &lt;= 81638:
+        val = 7044.76 + ((wages - 44138) * 0.24)
 
-    elif wages &gt; 60500 and wages &lt;= 106338:
-        val = 13055.51 + ((wages - 60500) * 0.33)
+    elif wages &gt; 81638 and wages &lt;= 102888:
+        val = 16044.76 + ((wages - 81638) * 0.32)
 
-    elif wages &gt; 106338 and wages &lt;= 119838:
-        val = 28182.05 + ((wages - 106338) * 0.35)
+    elif wages &gt; 102888 and wages &lt;= 152888:
+        val = 22844.76 + ((wages - 102888) * 0.35)
 
-    elif wages &gt; 119838:
-        val = 32907.05 + ((wages - 119838) * 0.396)
+    elif wages &gt; 152888:
+        val = 40344.76 + ((wages - 152888) * 0.37)
 
 ###
 # Married SEMIANNUAL
 ###
 elif 'semi-annually' == schedule_pay:
-    wages -= allowances * 2025.00
+    wages -= allowances * 2075.00
     if is_nra:
-        wages += 1150.0
+        wages += 3925.00
 
-    if wages &gt; 4325 and wages &lt;= 13650:
-        val = 0.00 + ((wages - 4325) * 0.10)
+    if wages &gt; 5775 and wages &lt;= 15300:
+        val = 0.00 + ((wages - 5775) * 0.10)
 
-    elif wages &gt; 13650 and wages &lt;= 42275:
-        val = 932.50 + ((wages - 13650) * 0.15)
+    elif wages &gt; 15300 and wages &lt;= 44475:
+        val = 952.50 + ((wages - 15300) * 0.12)
 
-    elif wages &gt; 42275 and wages &lt;= 80875:
-        val = 5226.25 + ((wages - 42275) * 0.25)
+    elif wages &gt; 44475 and wages &lt;= 88275:
+        val = 4453.50 + ((wages - 44475) * 0.22)
 
-    elif wages &gt; 80875 and wages &lt;= 121000:
-        val = 14876.25 + ((wages - 80875) * 0.28)
+    elif wages &gt; 88275 and wages &lt;= 163275:
+        val = 14089.50 + ((wages - 88275) * 0.24)
 
-    elif wages &gt; 121000 and wages &lt;= 212675:
-        val = 26111.25 + ((wages - 121000) * 0.33)
+    elif wages &gt; 163275 and wages &lt;= 205775:
+        val = 32089.50 + ((wages - 163275) * 0.32)
 
-    elif wages &gt; 212675 and wages &lt;= 239675:
-        val = 56364.00 + ((wages - 212675) * 0.35)
+    elif wages &gt; 205775 and wages &lt;= 305775:
+        val = 45689.50 + ((wages - 205775) * 0.35)
 
-    elif wages &gt; 239675:
-        val = 65814.00 + ((wages - 239675) * 0.396)
+    elif wages &gt; 305775:
+        val = 80689.50 + ((wages - 305775) * 0.37)
 
 ###
 # Married ANNUAL
 ###
 elif 'annually' == schedule_pay:
-    wages -= allowances * 4050.00
+    wages -= allowances * 4150.00
     if is_nra:
-        wages += 2300.0
+        wages += 7850.00
 
-    if wages &gt; 8650 and wages &lt;= 27300:
-        val = 0.00 + ((wages - 8650) * 0.10)
+    if wages &gt; 11550 and wages &lt;= 30600:
+        val = 0.00 + ((wages - 11550) * 0.10)
 
-    elif wages &gt; 27300 and wages &lt;= 84550:
-        val = 1865.00 + ((wages - 27300) * 0.15)
+    elif wages &gt; 30600 and wages &lt;= 88950:
+        val = 1905.00 + ((wages - 30600) * 0.12)
 
-    elif wages &gt; 84550 and wages &lt;= 161750:
-        val = 10452.50 + ((wages - 84550) * 0.25)
+    elif wages &gt; 88950 and wages &lt;= 176550:
+        val = 8907.00 + ((wages - 88950) * 0.22)
 
-    elif wages &gt; 161750 and wages &lt;= 242000:
-        val = 29752.50 + ((wages - 161750) * 0.28)
+    elif wages &gt; 176550 and wages &lt;= 326550:
+        val = 28179.00 + ((wages - 176550) * 0.24)
 
-    elif wages &gt; 242000 and wages &lt;= 425350:
-        val = 52222.50 + ((wages - 242000) * 0.33)
+    elif wages &gt; 326550 and wages &lt;= 411550:
+        val = 64179.00 + ((wages - 326550) * 0.32)
 
-    elif wages &gt; 425350 and wages &lt;= 479350:
-        val = 112728.00 + ((wages - 425350) * 0.35)
+    elif wages &gt; 411550 and wages &lt;= 611550:
+        val = 91379.00 + ((wages - 411550) * 0.35)
 
-    elif wages &gt; 479350:
-        val = 131628.00 + ((wages - 479350) * 0.396)
+    elif wages &gt; 611550:
+        val = 161379.00 + ((wages - 611550) * 0.37)
 
 else:
     raise Exception('Invalid schedule_pay="' + schedule_pay + '" for W4 Allowance calculation')

@@ -120,11 +120,11 @@ class TestUsPayslip2018(TestUsPayslip):
         salary = 6000.00
         schedule_pay = 'monthly'
         w4_allowances = 3
-        w4_allowance_amt = 337.50 * w4_allowances
-        adjusted_salary = salary - w4_allowance_amt  # should be 4987.50, but would work over a wide value for the rate
+        w4_allowance_amt = 345.80 * w4_allowances
+        adjusted_salary = salary - w4_allowance_amt  # should be 4962.60, but would work over a wide value for the rate
         ###
         # Single MONTHLY form Publication 15
-        expected_withholding = self.float_round(-(435.45 + ((adjusted_salary - 3354) * 0.25)), self.payroll_digits)
+        expected_withholding = self.float_round(-(371.12 + ((adjusted_salary - 3533) * 0.22)), self.payroll_digits)
 
         employee = self._createEmployee()
         self._createContract(employee, salary, schedule_pay, w4_allowances, 'single')
@@ -142,11 +142,11 @@ class TestUsPayslip2018(TestUsPayslip):
         salary = 500.00
         schedule_pay = 'weekly'
         w4_allowances = 1
-        w4_allowance_amt = 77.90 * w4_allowances
-        adjusted_salary = salary - w4_allowance_amt  # should be 422.10, but would work over a wide value for the rate
+        w4_allowance_amt = 79.80 * w4_allowances
+        adjusted_salary = salary - w4_allowance_amt  # should be 420.50, but would work over a wide value for the rate
         ###
         # Single MONTHLY form Publication 15
-        expected_withholding = self.float_round(-(18.00 + ((adjusted_salary - 224) * 0.15)), self.payroll_digits)
+        expected_withholding = self.float_round(-(18.30 + ((adjusted_salary - 254) * 0.12)), self.payroll_digits)
 
         employee = self._createEmployee()
         self._createContract(employee, salary, schedule_pay, w4_allowances, 'married_as_single')
@@ -164,11 +164,11 @@ class TestUsPayslip2018(TestUsPayslip):
         salary = 14000.00
         schedule_pay = 'bi-weekly'
         w4_allowances = 2
-        w4_allowance_amt = 155.80 * w4_allowances
-        adjusted_salary = salary - w4_allowance_amt  # should be 1368.84, but would work over a wide value for the rate
+        w4_allowance_amt = 159.60 * w4_allowances
+        adjusted_salary = salary - w4_allowance_amt  # should be 13680.80, but would work over a wide value for the rate
         ###
         # Single MONTHLY form Publication 15
-        expected_withholding = self.float_round(-(2008.61 + ((adjusted_salary - 9308) * 0.33)), self.payroll_digits)
+        expected_withholding = self.float_round(-(2468.56 + ((adjusted_salary - 12560) * 0.32)), self.payroll_digits)
 
         employee = self._createEmployee()
         self._createContract(employee, salary, schedule_pay, w4_allowances, 'married')
@@ -276,13 +276,13 @@ class TestUsPayslip2018(TestUsPayslip):
         salary = 3500.00
         schedule_pay = 'quarterly'
         w4_allowances = 1
-        w4_allowance_amt = 1012.50 * w4_allowances
-        nra_adjustment = 575.00  # for quarterly
-        adjusted_salary = salary - w4_allowance_amt + nra_adjustment  # 3050
+        w4_allowance_amt = 1037.50 * w4_allowances
+        nra_adjustment = 1962.50  # for quarterly
+        adjusted_salary = salary - w4_allowance_amt + nra_adjustment  # 4425
 
         ###
         # Single QUARTERLY form Publication 15
-        expected_withholding = self.float_round(-(233.10 + ((adjusted_salary - 2906) * 0.15)), self.payroll_digits)
+        expected_withholding = self.float_round(-(238.10 + ((adjusted_salary - 3306) * 0.12)), self.payroll_digits)
 
         employee = self._createEmployee()
         self._createContract(employee, salary, schedule_pay, w4_allowances, 'single',
@@ -302,13 +302,13 @@ class TestUsPayslip2018(TestUsPayslip):
         schedule_pay = 'annually'
         w4_additional_withholding = 5000.0
         w4_allowances = 2
-        w4_allowance_amt = 4050.0 * w4_allowances
-        adjusted_salary = salary - w4_allowance_amt  # 41900
+        w4_allowance_amt = 4150.00 * w4_allowances
+        adjusted_salary = salary - w4_allowance_amt  # 41700
 
         ###
         # Single ANNUAL form Publication 15
         expected_withholding = \
-            self.float_round(-((1865.00 + ((adjusted_salary - 27300) * 0.15)) + w4_additional_withholding),
+            self.float_round(-((1905.00 + ((adjusted_salary - 30600) * 0.12)) + w4_additional_withholding),
                              self.payroll_digits)
 
         employee = self._createEmployee()
