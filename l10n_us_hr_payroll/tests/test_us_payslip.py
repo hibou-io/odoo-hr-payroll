@@ -103,3 +103,11 @@ class TestUsPayslip(common.TransactionCase):
 
     def assertPayrollEqual(self, first, second):
         self.assertAlmostEqual(first, second, self.payroll_digits)
+
+    def test_semi_monthly(self):
+        salary = 80000.0
+        employee = self._createEmployee()
+        contract = self._createContract(employee, salary, schedule_pay='semi-monthly')
+        payslip = self._createPayslip(employee, '2016-01-01', '2016-01-14')
+
+        payslip.compute_sheet()

@@ -13,6 +13,7 @@ class USHrContract(models.Model):
 
     _inherit = 'hr.contract'
 
+    schedule_pay = fields.Selection(selection_add=[('semi-monthly', 'Semi-monthly')])
     w4_allowances = fields.Integer(string='Federal W4 Allowances', default=0)
     w4_filing_status = fields.Selection([
         ('', 'Exempt'),
