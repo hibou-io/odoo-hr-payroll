@@ -186,7 +186,7 @@ elif 'bi-weekly' == schedule_pay:
 ###
 # Single SEMIMONTHLY
 ###
-elif 'semi-monthly' == schedule_pay:  # impossible
+elif 'semi-monthly' == schedule_pay:
     wages -= allowances * 172.90
     if is_nra:
         wages += 327.10
@@ -412,7 +412,7 @@ elif 'bi-weekly' == schedule_pay:
 ###
 # Married SEMIMONTHLY
 ###
-elif 'semi-monthly' == schedule_pay:  # impossible
+elif 'semi-monthly' == schedule_pay:
     wages -= allowances * 172.90
     if is_nra:
         wages += 327.10
