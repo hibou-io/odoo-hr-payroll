@@ -1,4 +1,4 @@
-from odoo import models, fields, api
+from openerp import models, fields, api
 
 
 class USMOHrContract(models.Model):
