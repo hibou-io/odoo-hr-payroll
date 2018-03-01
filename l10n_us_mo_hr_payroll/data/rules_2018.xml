@@ -48,7 +48,7 @@ if result_rate == 0.0:
     <record id="hr_payroll_rules_mo_inc_withhold_2018" model="hr.salary.rule">
         <field name="sequence" eval="145"/>
         <field name="category_id" ref="hr_payroll_mo_income_withhold"/>
-        <field name="name">Missouri Income Withholding</field>
+        <field name="name">Missouri Income Withholding (2018)</field>
         <field name="code">MO_INC_WITHHOLD_2018</field>
         <field name="condition_select">python</field>
         <field name="condition_python">result = (payslip.date_to[:4] == '2018')</field>
@@ -142,6 +142,10 @@ if filing_status:
             break
     tax = -tax
     tax = tax / PP
+
+    # Small GROSS results in an underflow
+    if tax &gt; 0.0:
+        tax = 0.0
 
     if additional:
         tax -= additional
