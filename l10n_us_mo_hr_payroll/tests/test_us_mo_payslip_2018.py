@@ -207,3 +207,18 @@ class TestUsMoPayslip(TestUsPayslip):
         tax = round(tax)
         self._log('Computed period tax: ' + str(tax))
         self.assertPayrollEqual(cats['MO_INC_WITHHOLD'], tax)
+
+    def test_2018_underflow(self):
+        # Payroll Period Weekly
+        salary = 200.0
+
+        employee = self._createEmployee()
+
+        contract = self._createContract(employee, salary,
+                                        struct_id=self.ref('l10n_us_mo_hr_payroll.hr_payroll_salary_structure_us_mo_employee'))
+
+        payslip = self._createPayslip(employee, '2018-01-01', '2018-01-31')
+        payslip.compute_sheet()
+        cats = self._getCategories(payslip)
+
+        self.assertPayrollEqual(cats['MO_INC_WITHHOLD'], 0.0)
